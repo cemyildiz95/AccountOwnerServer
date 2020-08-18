@@ -24,6 +24,6 @@ namespace Entities.Models
         public string Address { get; set; }
 
 
-        //public ICollection<Account> Accounts { get; set; }
+        public ICollection<Account> Accounts { get; set; }
     }
 }

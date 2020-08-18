@@ -19,10 +19,11 @@ namespace AccountOwnerServer.Controllers
         private readonly IMapper _mapper;
 
 
-        public OwnerController(ILoggerManager logger, IRepositoryWrapper repository)
+        public OwnerController(ILoggerManager logger, IRepositoryWrapper repository,IMapper mapper)
         {
             _logger = logger;
             _repository = repository;
+            _mapper = mapper;
         }
 
 

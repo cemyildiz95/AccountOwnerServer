@@ -45,12 +45,8 @@ namespace AccountOwnerServer.Extensions
         public static void ConfigureMysqlContext(this IServiceCollection services, IConfiguration config)
         {
 
-            var a = config.GetConnectionString("mysqlconnection");
-            services.AddDbContext<RepositoryContext>(options => options.UseMySql(a));
-
-            //services.AddDbContext<FitYemekContext>(options => options.UseMySql(Configuration.GetConnectionString("DevConnection")));
-            //var connectionString = config["mysqlconnection:connectionString"];
-            //services.AddDbContext<RepositoryContext>(o => o.UseMySql(connectionString));
+            var conn = config.GetConnectionString("mysqlconnection");
+            services.AddDbContext<RepositoryContext>(options => options.UseMySql(conn));
         }
 
         public static void ConfigureRepositoryWrapper(this IServiceCollection services)

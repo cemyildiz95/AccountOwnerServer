@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: dotnetapp
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /dotnetapp
+            backend:
+              serviceName: dotnetapp-server-cluster-ip-service
+              servicePort: 80

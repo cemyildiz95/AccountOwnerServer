@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubernetesample-service-deployment
+  name: kubernetesample
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       component: kubernetesample
@@ -14,14 +14,12 @@ spec:
     spec:
       containers:
         - name: kubernetesample
-          image: cemyldzz/kubernetesample
+          image: cemyldzz/kubernetesample:1.1
           env:
-            - name: ConnectionStrings__MyDBConnection
-              value: "Server=kubernetesample-mysql-cluster-ip-service,3306;Database=accountownerserver;User Id=root;Password=123456;"
             - name: SA_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: sqlpassword
+                  name: mysqlpassword
                   key: SA_PASSWORD
             - name: ASPNETCORE_ENVIRONMENT
               value: Development

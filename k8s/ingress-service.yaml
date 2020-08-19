@@ -1,12 +1,12 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: dotnetapp
+  name: kubernetesample
 spec:
   rules:
     - http:
         paths:
-          - path: /dotnetapp
+          - path: /
             backend:
-              serviceName: dotnetapp-server-cluster-ip-service
+              serviceName: kubernetesample-server-cluster-ip-service
               servicePort: 80

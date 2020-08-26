@@ -10,16 +10,16 @@ namespace Entities.Models
     public class Account
     {
         [Column("AccountId")]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        [Required(ErrorMessage ="Date created is required")]
+        //[Required(ErrorMessage ="Date created is required")]
         public DateTime DateCreated { get; set; }
 
         [Required(ErrorMessage = "Account type is required")]
         public string AccountType { get; set; }
 
         [ForeignKey(nameof(Owner))]
-        public Guid OwnerId { get; set; }
+        public int OwnerId { get; set; }
         public Owner Owner { get; set; }
     }
 }

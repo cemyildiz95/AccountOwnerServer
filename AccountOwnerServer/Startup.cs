@@ -33,7 +33,7 @@ namespace AccountOwnerServer
             services.ConfigureCors();
             services.ConfigureIISIntegrations();
             services.ConfigureLoggerService();
-            services.ConfigureMysqlContext(Configuration);
+            services.ConfigureMssqlContext(Configuration);
             services.ConfigureRepositoryWrapper();
 
             services.AddAutoMapper(typeof(Startup));

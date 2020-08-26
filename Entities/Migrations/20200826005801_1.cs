@@ -11,7 +11,8 @@ namespace Entities.Migrations
                 name: "owner",
                 columns: table => new
                 {
-                    OwnerId = table.Column<Guid>(nullable: false),
+                    OwnerId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 60, nullable: false),
                     DateOfBirth = table.Column<DateTime>(nullable: false),
                     Address = table.Column<string>(maxLength: 100, nullable: false)
@@ -25,10 +26,11 @@ namespace Entities.Migrations
                 name: "account",
                 columns: table => new
                 {
-                    AccountId = table.Column<Guid>(nullable: false),
+                    AccountId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     AccountType = table.Column<string>(nullable: false),
-                    OwnerId = table.Column<Guid>(nullable: false)
+                    OwnerId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
